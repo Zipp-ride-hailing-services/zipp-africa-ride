@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -36,6 +36,7 @@ import {
 
 import { Nav } from "@/components/zipp/Nav";
 import { Counter } from "@/components/zipp/Counter";
+import { Section, Eyebrow, fadeUp } from "@/components/zipp/Section";
 
 import heroPhone from "@/assets/hero-phone.png";
 import screenBooking from "@/assets/screen-booking.png";
@@ -48,6 +49,9 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import driverHero from "@/assets/driver-hero.jpg";
 
 export const Route = createFileRoute("/")({
+  beforeLoad: () => {
+    throw redirect({ to: "/waitlist" });
+  },
   component: LandingPage,
   head: () => ({
     meta: [
@@ -82,36 +86,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
-function Section({
-  id,
-  className = "",
-  children,
-}: {
-  id?: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} className={`relative py-20 sm:py-28 ${className}`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
-    </section>
-  );
-}
-
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-3 py-1 text-xs font-medium text-muted-foreground">
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
-      {children}
-    </div>
-  );
-}
 
 /* -------------------- HERO -------------------- */
 function Hero() {

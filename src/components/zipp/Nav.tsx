@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -53,12 +54,12 @@ export function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <a
-            href="#download"
+          <Link
+            to="/waitlist"
             className="relative inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary/90 transition-all shadow-soft hover:shadow-glow"
           >
-            Download App
-          </a>
+            Join waitlist
+          </Link>
         </div>
 
         <button
@@ -89,13 +90,13 @@ export function Nav() {
                   {l.label}
                 </a>
               ))}
-              <a
-                href="#download"
+              <Link
+                to="/waitlist"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold bg-primary text-primary-foreground"
               >
-                Download App
-              </a>
+                Join waitlist
+              </Link>
             </div>
           </motion.div>
         )}
