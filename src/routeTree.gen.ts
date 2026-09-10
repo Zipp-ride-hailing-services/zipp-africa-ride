@@ -10,11 +10,101 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as CitiesRouteImport } from './routes/cities'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DriveRouteImport } from './routes/drive'
+import { Route as DriversRouteImport } from './routes/drivers'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as PaymentsRouteImport } from './routes/payments'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RideRouteImport } from './routes/ride'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TransitRouteImport } from './routes/transit'
 import { Route as WaitlistRouteImport } from './routes/waitlist'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CitiesRoute = CitiesRouteImport.update({
+  id: '/cities',
+  path: '/cities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriveRoute = DriveRouteImport.update({
+  id: '/drive',
+  path: '/drive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriversRoute = DriversRouteImport.update({
+  id: '/drivers',
+  path: '/drivers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsRoute = PaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RideRoute = RideRouteImport.update({
+  id: '/ride',
+  path: '/ride',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransitRoute = TransitRouteImport.update({
+  id: '/transit',
+  path: '/transit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WaitlistRoute = WaitlistRouteImport.update({
@@ -25,27 +115,139 @@ const WaitlistRoute = WaitlistRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/app': typeof AppRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/cities': typeof CitiesRoute
+  '/contact': typeof ContactRoute
+  '/drive': typeof DriveRoute
+  '/drivers': typeof DriversRoute
+  '/help': typeof HelpRoute
+  '/payments': typeof PaymentsRoute
+  '/privacy': typeof PrivacyRoute
+  '/ride': typeof RideRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/transit': typeof TransitRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/app': typeof AppRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/cities': typeof CitiesRoute
+  '/contact': typeof ContactRoute
+  '/drive': typeof DriveRoute
+  '/drivers': typeof DriversRoute
+  '/help': typeof HelpRoute
+  '/payments': typeof PaymentsRoute
+  '/privacy': typeof PrivacyRoute
+  '/ride': typeof RideRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/transit': typeof TransitRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/app': typeof AppRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/cities': typeof CitiesRoute
+  '/contact': typeof ContactRoute
+  '/drive': typeof DriveRoute
+  '/drivers': typeof DriversRoute
+  '/help': typeof HelpRoute
+  '/payments': typeof PaymentsRoute
+  '/privacy': typeof PrivacyRoute
+  '/ride': typeof RideRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/transit': typeof TransitRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/waitlist'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/app'
+    | '/business'
+    | '/careers'
+    | '/cities'
+    | '/contact'
+    | '/drive'
+    | '/drivers'
+    | '/help'
+    | '/payments'
+    | '/privacy'
+    | '/ride'
+    | '/safety'
+    | '/terms'
+    | '/transit'
+    | '/waitlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/waitlist'
-  id: '__root__' | '/' | '/waitlist'
+  to:
+    | '/'
+    | '/about'
+    | '/app'
+    | '/business'
+    | '/careers'
+    | '/cities'
+    | '/contact'
+    | '/drive'
+    | '/drivers'
+    | '/help'
+    | '/payments'
+    | '/privacy'
+    | '/ride'
+    | '/safety'
+    | '/terms'
+    | '/transit'
+    | '/waitlist'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/app'
+    | '/business'
+    | '/careers'
+    | '/cities'
+    | '/contact'
+    | '/drive'
+    | '/drivers'
+    | '/help'
+    | '/payments'
+    | '/privacy'
+    | '/ride'
+    | '/safety'
+    | '/terms'
+    | '/transit'
+    | '/waitlist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AppRoute: typeof AppRoute
+  BusinessRoute: typeof BusinessRoute
+  CareersRoute: typeof CareersRoute
+  CitiesRoute: typeof CitiesRoute
+  ContactRoute: typeof ContactRoute
+  DriveRoute: typeof DriveRoute
+  DriversRoute: typeof DriversRoute
+  HelpRoute: typeof HelpRoute
+  PaymentsRoute: typeof PaymentsRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RideRoute: typeof RideRoute
+  SafetyRoute: typeof SafetyRoute
+  TermsRoute: typeof TermsRoute
+  TransitRoute: typeof TransitRoute
   WaitlistRoute: typeof WaitlistRoute
 }
 
@@ -56,6 +258,111 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cities': {
+      id: '/cities'
+      path: '/cities'
+      fullPath: '/cities'
+      preLoaderRoute: typeof CitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drive': {
+      id: '/drive'
+      path: '/drive'
+      fullPath: '/drive'
+      preLoaderRoute: typeof DriveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drivers': {
+      id: '/drivers'
+      path: '/drivers'
+      fullPath: '/drivers'
+      preLoaderRoute: typeof DriversRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments': {
+      id: '/payments'
+      path: '/payments'
+      fullPath: '/payments'
+      preLoaderRoute: typeof PaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ride': {
+      id: '/ride'
+      path: '/ride'
+      fullPath: '/ride'
+      preLoaderRoute: typeof RideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transit': {
+      id: '/transit'
+      path: '/transit'
+      fullPath: '/transit'
+      preLoaderRoute: typeof TransitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/waitlist': {
@@ -70,6 +377,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AppRoute: AppRoute,
+  BusinessRoute: BusinessRoute,
+  CareersRoute: CareersRoute,
+  CitiesRoute: CitiesRoute,
+  ContactRoute: ContactRoute,
+  DriveRoute: DriveRoute,
+  DriversRoute: DriversRoute,
+  HelpRoute: HelpRoute,
+  PaymentsRoute: PaymentsRoute,
+  PrivacyRoute: PrivacyRoute,
+  RideRoute: RideRoute,
+  SafetyRoute: SafetyRoute,
+  TermsRoute: TermsRoute,
+  TransitRoute: TransitRoute,
   WaitlistRoute: WaitlistRoute,
 }
 export const routeTree = rootRouteImport
